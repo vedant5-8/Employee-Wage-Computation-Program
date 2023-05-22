@@ -13,6 +13,8 @@ namespace EmployeeWageComputationProgram
                 Console.WriteLine("1. Check employee is present or not.");
                 Console.WriteLine("2. Calculate daily employee wage.");
                 Console.WriteLine("3. Calculate monthly employee wage.");
+                Console.WriteLine("4. Calculating Wages till Number of Working Days or Total Working Hours per month is Reached.");
+                Console.WriteLine("5. Exit.");
 
                 Console.Write("=>");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -27,6 +29,12 @@ namespace EmployeeWageComputationProgram
                         break;
                     case 3:
                         MonthlyEmployeeWage.CalculateMonthlyEmployeeWage();
+                        break;
+                    case 4:
+                        TotalWages.CalculateTotalWages();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
                         break;
                     default: 
                         Console.WriteLine("Enter correct choice.");
