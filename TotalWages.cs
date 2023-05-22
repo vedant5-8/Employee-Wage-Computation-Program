@@ -12,7 +12,7 @@ namespace Employee_Wage_Computation_Program
         public const int isPartTime = 2;
         public const int empWagePerHour = 20;
         public const int numberOfWorkingDays = 2;
-        public const int maxHoursInMonth = 10;
+        public const int maxHoursInMonth = 100;
         public static void CalculateTotalWages()
         {
             int empHours = 0;
