@@ -11,6 +11,7 @@ namespace EmployeeWageComputationProgram
             {
                 Console.WriteLine("Enter your Choice: ");
                 Console.WriteLine("1. Check employee is present or not.");
+                Console.WriteLine("2. Calculate daily employee wage.");
 
                 Console.Write("=>");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -19,6 +20,9 @@ namespace EmployeeWageComputationProgram
                 {
                     case 1:
                         Attendance.EmployeeAttendance();
+                        break;
+                    case 2:
+                        DailyEmployeeWage.CalculateDailyEmployeeWage();
                         break;
                     default: 
                         Console.WriteLine("Enter correct choice.");
