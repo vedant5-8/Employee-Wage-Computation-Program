@@ -14,7 +14,8 @@ namespace EmployeeWageComputationProgram
                 Console.WriteLine("2. Calculate daily employee wage.");
                 Console.WriteLine("3. Calculate monthly employee wage.");
                 Console.WriteLine("4. Calculating Wages till Number of Working Days or Total Working Hours per month is Reached.");
-                Console.WriteLine("5. Exit.");
+                Console.WriteLine("5. Compute Employee Wage for Multiple Company.");
+                Console.WriteLine("6. Exit.");
 
                 Console.Write("=>");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -34,6 +35,10 @@ namespace EmployeeWageComputationProgram
                         TotalWages.CalculateTotalWages();
                         break;
                     case 5:
+                        EmpWageForMultipleCompanies.computeEmployeeWage("IBM", 20, 2, 100);
+                        EmpWageForMultipleCompanies.computeEmployeeWage("TCS", 20, 5, 100);
+                        break;
+                    case 6:
                         Environment.Exit(0);
                         break;
                     default: 
