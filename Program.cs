@@ -4,13 +4,12 @@ namespace Employee_Wage_Computation_Program
 {
     class Program
     {
+        public const int Is_Part_Time = 1;
+        public const int Is_Full_Time = 2;
+        public const int EmpRatePerHour = 20;
         static void Main(string[] args)
         {
-            // UC3 - Add Part time employee and Calculate daily employee wage
-
-            int Is_Part_Time = 1;
-            int Is_Full_Time = 2;
-            int EmpRatePerHour = 20;
+            // UC4 - Calculate daily employee wage with switch case statement
 
             int EmpHours;
             int EmpWage;
@@ -19,17 +18,17 @@ namespace Employee_Wage_Computation_Program
 
             int EmpCheck = random.Next(0, 3);
 
-            if (EmpCheck == Is_Part_Time)
+            switch (EmpCheck)
             {
-                EmpHours = 4;
-            }
-            else if (EmpCheck == Is_Full_Time)
-            {
-                EmpHours = 8;
-            }
-            else
-            {
-                EmpHours = 0;
+                case Is_Part_Time:
+                    EmpHours = 4;
+                    break;
+                case Is_Full_Time:
+                    EmpHours = 8;
+                    break;
+                default:
+                    EmpHours = 0;
+                    break;
             }
 
             EmpWage = EmpHours * EmpRatePerHour;
