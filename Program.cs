@@ -6,9 +6,10 @@ namespace Employee_Wage_Computation_Program
     {
         static void Main(string[] args)
         {
-            // UC2 - Calculate daily employee wage
+            // UC3 - Add Part time employee and Calculate daily employee wage
 
-            int Is_Full_Time = 1;
+            int Is_Part_Time = 1;
+            int Is_Full_Time = 2;
             int EmpRatePerHour = 20;
 
             int EmpHours;
@@ -16,9 +17,13 @@ namespace Employee_Wage_Computation_Program
 
             Random random = new Random();
 
-            int EmpCheck = random.Next(0, 2);
+            int EmpCheck = random.Next(0, 3);
 
-            if (EmpCheck == Is_Full_Time)
+            if (EmpCheck == Is_Part_Time)
+            {
+                EmpHours = 4;
+            }
+            else if (EmpCheck == Is_Full_Time)
             {
                 EmpHours = 8;
             }
