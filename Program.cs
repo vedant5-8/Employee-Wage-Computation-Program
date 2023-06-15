@@ -8,16 +8,20 @@ namespace Employee_Wage_Computation_Program
         public const int Is_Full_Time = 2;
         public const int EmpRatePerHour = 20;
         public const int NumOfWorkDaysPerMonth = 20;
+        public const int MaxHoursInMonth = 100;
         static void Main(string[] args)
         {
-            // UC5 - Calculate monthly employee wage.
+            // UC6 - Calculate Wages till number of working days or total working hours per months is reached
 
             int EmpHours;
             int EmpWage;
-            int TotalEmpWage = 0;
+            int TotalEmpHours = 0;
+            int TodalWorkingDays = 0;
 
-            for (int day = 1; day <= NumOfWorkDaysPerMonth; day++)
+            while (TotalEmpHours <= MaxHoursInMonth && TodalWorkingDays < NumOfWorkDaysPerMonth)
             {
+                TodalWorkingDays++;
+
                 Random random = new Random();
 
                 int EmpCheck = random.Next(0, 3);
@@ -35,12 +39,12 @@ namespace Employee_Wage_Computation_Program
                         break;
                 }
 
-                EmpWage = EmpHours * EmpRatePerHour;
-                TotalEmpWage += EmpWage;
-                Console.WriteLine("Daily Employee Wage is {0}", EmpWage);
+                TotalEmpHours += EmpHours;
+                Console.WriteLine("Days: {0} | Employee Hours: {1}",TodalWorkingDays, EmpHours);
 
             }
 
+            int TotalEmpWage = TotalEmpHours * EmpRatePerHour;
             Console.WriteLine("\nTotal employee wage is {0}", TotalEmpWage);
 
         }
