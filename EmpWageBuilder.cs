@@ -8,6 +8,7 @@ namespace Employee_Wage_Computation_Program
     {
         void AddCompany(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth);
         void ComputeEmpWage();
+        void getTotalWageByCompany(string Company);
     }
 
     public class CompanyEmpWage
@@ -110,9 +111,17 @@ namespace Employee_Wage_Computation_Program
 
         }
 
-        public int getTotalWageByCompany(string Company)
+        public void getTotalWageByCompany(string Company)
         {
-            return this.companiesDictionary[Company].TotalEmpWage;
+            try
+            {
+                Console.WriteLine("Total wage for {0} company is {1}",
+                    Company, this.companiesDictionary[Company].TotalEmpWage);
+            }
+            catch
+            {
+                Console.WriteLine("Company \"{0}\" is not present in the list.", Company);
+            }
         }
 
     }

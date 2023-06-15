@@ -15,7 +15,7 @@ namespace Employee_Wage_Computation_Program
             Console.WriteLine("Enter company name: ");
             string company = Console.ReadLine();
 
-            Console.WriteLine("Total wage for {0} company is {1}", company, empWageBuilder.getTotalWageByCompany(company));
+            empWageBuilder.getTotalWageByCompany(company);
         }
     }
 }
