@@ -6,18 +6,15 @@ namespace Employee_Wage_Computation_Program
     {
         public const int Is_Part_Time = 1;
         public const int Is_Full_Time = 2;
-        public const int EmpRatePerHour = 20;
-        public const int NumOfWorkDaysPerMonth = 20;
-        public const int MaxHoursInMonth = 100;
 
-        // UC7 - Calculate employee wage using class methods
-        public static int ComputeEmpWage()
+        // UC8 - Calculate employee wage for multiple companies.
+        public static int ComputeEmpWage(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth)
         {
             int EmpHours;
             int TotalEmpHours = 0;
             int TotalWorkingDays = 0;
 
-            while (TotalEmpHours <= MaxHoursInMonth && TotalWorkingDays < NumOfWorkDaysPerMonth)
+            while (TotalEmpHours <= MaxHoursPerMonth && TotalWorkingDays < NumOfWorkDays)
             {
                 TotalWorkingDays++;
 
@@ -44,12 +41,13 @@ namespace Employee_Wage_Computation_Program
             }
 
             int TotalEmpWage = TotalEmpHours * EmpRatePerHour;
-            Console.WriteLine("\nTotal employee wage is {0}", TotalEmpWage);
+            Console.WriteLine("\nTotal employee wage for company {0} is {1}\n",Company, TotalEmpWage);
             return TotalEmpWage;
         }
         static void Main(string[] args)
         {
-            ComputeEmpWage();
+            ComputeEmpWage("IBM", 20, 5, 25);
+            ComputeEmpWage("Jio", 20, 4, 20);
         }
     }
 }
