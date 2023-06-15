@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Employee_Wage_Computation_Program
 {
-    // UC11 - Calculate employee wage of multiple companies using Interface.
+    // UC12 - Calculate employee wage of multiple companies using ArrayList.
 
     interface IComputeWage
     {
@@ -48,25 +44,26 @@ namespace Employee_Wage_Computation_Program
         public const int Is_Full_Time = 2;
 
         private int NumOfCompany = 0;
-        private CompanyEmpWage[] CompanyEmpWageArray;
+
+        private ArrayList companies;
 
         public EmpWageBuilder()
         {
-            this.CompanyEmpWageArray = new CompanyEmpWage[10];
+            companies = new ArrayList();
         }
 
         public void AddCompany(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth)
         {
-            CompanyEmpWageArray[this.NumOfCompany] = new CompanyEmpWage(Company, EmpRatePerHour, NumOfWorkDays, MaxHoursPerMonth);
-            NumOfCompany++;
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage(Company, EmpRatePerHour, NumOfWorkDays, MaxHoursPerMonth);
+            this.companies.Add(companyEmpWage);
         }
 
         public void ComputeEmpWage()
         {
-            for(int i = 0; i < NumOfCompany; i++)
+            foreach (CompanyEmpWage companyEmpWage in this.companies)
             {
-                CompanyEmpWageArray[i].setTotalEmpWage(this.ComputeEmpWage(this.CompanyEmpWageArray[i]));
-                Console.WriteLine(this.CompanyEmpWageArray[i].toString());
+                companyEmpWage.setTotalEmpWage(this.ComputeEmpWage(companyEmpWage));
+                Console.WriteLine(companyEmpWage.toString());
             }
         }
 
