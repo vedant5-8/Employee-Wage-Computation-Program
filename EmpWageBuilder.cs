@@ -49,7 +49,7 @@ namespace Employee_Wage_Computation_Program
             this.CompanyEmpWageArray = new CompanyEmpWage[10];
         }
 
-        public void AddCompanyEmpWage(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth)
+        public void AddCompany(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth)
         {
             CompanyEmpWageArray[this.NumOfCompany] = new CompanyEmpWage(Company, EmpRatePerHour, NumOfWorkDays, MaxHoursPerMonth);
             NumOfCompany++;
