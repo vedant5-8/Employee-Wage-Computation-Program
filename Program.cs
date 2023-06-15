@@ -16,6 +16,7 @@ namespace EmployeeWageComputationProgram
                 Console.WriteLine("4. Calculating Wages till Number of Working Days or Total Working Hours per month is Reached.");
                 Console.WriteLine("5. Compute Employee Wage for Multiple Company.");
                 Console.WriteLine("6. Compute employee wage and save total wage by company.");
+                Console.WriteLine("7. Manage Employee Wage of multiple companies using array.");
                 Console.WriteLine("0. Exit.");
 
                 Console.Write("=>");
@@ -47,6 +48,16 @@ namespace EmployeeWageComputationProgram
                         TCS.ComputeEmpWage();
                         Console.WriteLine(TCS.toString());
                         break;
+
+                    case 7:
+                        EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+                        empWageBuilder.addCompanyEmployeeWage("IBM", 20, 4, 100);
+                        empWageBuilder.addCompanyEmployeeWage("TCS", 20, 5, 100);
+                        empWageBuilder.addCompanyEmployeeWage("Wipro", 20, 3, 100);
+                        empWageBuilder.computeEmpWage();
+                        break;
+
+
                     case 0:
                         Environment.Exit(0);
                         break;
