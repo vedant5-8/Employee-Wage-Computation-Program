@@ -2,7 +2,7 @@
 
 namespace Employee_Wage_Computation_Program
 {
-    // UC12 - Calculate employee wage of multiple companies using ArrayList.
+    // UC13 - Store the Daily Wage along with the Total Wage
 
     interface IComputeWage
     {
@@ -26,12 +26,12 @@ namespace Employee_Wage_Computation_Program
             this.MaxHoursPerMonth = MaxHoursPerMonth;
         }
 
-        public void setTotalEmpWage(int TotalEmpWage)
+        public void SetTotalEmpWage(int TotalEmpWage)
         {
             this.TotalEmpWage = TotalEmpWage;
         }
 
-        public string toString()
+        public string TotalWage()
         {
             return "\nTotal employee wage for company " + this.Company + " is " + this.TotalEmpWage + "\n";
         }
@@ -62,16 +62,17 @@ namespace Employee_Wage_Computation_Program
         {
             foreach (CompanyEmpWage companyEmpWage in this.companies)
             {
-                companyEmpWage.setTotalEmpWage(this.ComputeEmpWage(companyEmpWage));
-                Console.WriteLine(companyEmpWage.toString());
+                companyEmpWage.SetTotalEmpWage(this.ComputeEmpWage(companyEmpWage));
+                Console.WriteLine(companyEmpWage.TotalWage());
             }
         }
 
         private int ComputeEmpWage(CompanyEmpWage companyEmpWage)
-        {
-            int EmpHours;
+        { 
             int TotalEmpHours = 0;
             int TotalWorkingDays = 0;
+            int EmpHours = 0;
+            int DailyEmpWage;
 
             while (TotalEmpHours <= companyEmpWage.MaxHoursPerMonth && TotalWorkingDays < companyEmpWage.NumOfWorkDays)
             {
@@ -97,8 +98,11 @@ namespace Employee_Wage_Computation_Program
                 TotalEmpHours += EmpHours;
                 Console.WriteLine("Days: {0} | Employee Hours: {1}", TotalWorkingDays, EmpHours);
 
+                DailyEmpWage = EmpHours * companyEmpWage.EmpRatePerHour;
+                Console.WriteLine("Daily employee wage for Day {0} is {1}", TotalWorkingDays, DailyEmpWage);
             }
 
+            
             return TotalEmpHours * companyEmpWage.EmpRatePerHour;
 
         }
