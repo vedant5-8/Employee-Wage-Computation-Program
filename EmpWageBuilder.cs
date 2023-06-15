@@ -2,7 +2,7 @@
 
 namespace Employee_Wage_Computation_Program
 {
-    // UC13 - Store the Daily Wage along with the Total Wage
+    // UC14 - Get total wage when queried by company
 
     interface IComputeWage
     {
@@ -46,16 +46,19 @@ namespace Employee_Wage_Computation_Program
         private int NumOfCompany = 0;
 
         private ArrayList companies;
+        private Dictionary<string, CompanyEmpWage> companiesDictionary;
 
         public EmpWageBuilder()
         {
             companies = new ArrayList();
+            companiesDictionary = new Dictionary<string, CompanyEmpWage>();
         }
 
         public void AddCompany(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth)
         {
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(Company, EmpRatePerHour, NumOfWorkDays, MaxHoursPerMonth);
             this.companies.Add(companyEmpWage);
+            this.companiesDictionary.Add(Company, companyEmpWage);
         }
 
         public void ComputeEmpWage()
@@ -105,6 +108,11 @@ namespace Employee_Wage_Computation_Program
             
             return TotalEmpHours * companyEmpWage.EmpRatePerHour;
 
+        }
+
+        public int getTotalWageByCompany(string Company)
+        {
+            return this.companiesDictionary[Company].TotalEmpWage;
         }
 
     }
