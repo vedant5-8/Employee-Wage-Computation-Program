@@ -6,9 +6,13 @@ namespace Employee_Wage_Computation_Program
     {
         static void Main(string[] args)
         {
-            // UC1- Check employee is present or not
+            // UC2 - Calculate daily employee wage
 
             int Is_Full_Time = 1;
+            int EmpRatePerHour = 20;
+
+            int EmpHours;
+            int EmpWage;
 
             Random random = new Random();
 
@@ -16,13 +20,15 @@ namespace Employee_Wage_Computation_Program
 
             if (EmpCheck == Is_Full_Time)
             {
-                Console.WriteLine("Employee is Present.");
+                EmpHours = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent.");
+                EmpHours = 0;
             }
 
+            EmpWage = EmpHours * EmpRatePerHour;
+            Console.WriteLine("Daily Employee Wage is {0}", EmpWage);
         }
     }
 }
