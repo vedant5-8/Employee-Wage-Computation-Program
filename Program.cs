@@ -9,7 +9,7 @@ namespace Employee_Wage_Computation_Program
         public const int EmpRatePerHour = 20;
         static void Main(string[] args)
         {
-            // UC4 - Calculate daily employee wage with switch case statement
+            // UC4 - Calculate daily employee wage with switch case statement.
 
             int EmpHours;
             int EmpWage;
