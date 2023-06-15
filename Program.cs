@@ -18,9 +18,9 @@ namespace Employee_Wage_Computation_Program
             int TotalEmpHours = 0;
             int TotalWorkingDays = 0;
 
-            while (TotalEmpHours <= MaxHoursInMonth && TodalWorkingDays < NumOfWorkDaysPerMonth)
+            while (TotalEmpHours <= MaxHoursInMonth && TotalWorkingDays < NumOfWorkDaysPerMonth)
             {
-                TodalWorkingDays++;
+                TotalWorkingDays++;
 
                 Random random = new Random();
 
