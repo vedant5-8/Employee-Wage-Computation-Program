@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Employee_Wage_Computation_Program
 {
-    // UC10 - Calculate employee wage of multiple companies using Array.
+    // UC11 - Calculate employee wage of multiple companies using Interface.
+
+    interface IComputeWage
+    {
+        void AddCompany(string Company, int EmpRatePerHour, int NumOfWorkDays, int MaxHoursPerMonth);
+        void ComputeEmpWage();
+    }
 
     public class CompanyEmpWage
     {
@@ -36,7 +42,7 @@ namespace Employee_Wage_Computation_Program
 
     }
 
-    public class EmpWageBuilder
+    public class EmpWageBuilder : IComputeWage
     {
         public const int Is_Part_Time = 1;
         public const int Is_Full_Time = 2;
