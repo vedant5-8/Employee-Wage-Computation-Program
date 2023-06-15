@@ -16,7 +16,7 @@ namespace Employee_Wage_Computation_Program
             int EmpHours;
             int EmpWage;
             int TotalEmpHours = 0;
-            int TodalWorkingDays = 0;
+            int TotalWorkingDays = 0;
 
             while (TotalEmpHours <= MaxHoursInMonth && TodalWorkingDays < NumOfWorkDaysPerMonth)
             {
@@ -40,7 +40,7 @@ namespace Employee_Wage_Computation_Program
                 }
 
                 TotalEmpHours += EmpHours;
-                Console.WriteLine("Days: {0} | Employee Hours: {1}",TodalWorkingDays, EmpHours);
+                Console.WriteLine("Days: {0} | Employee Hours: {1}",TotalWorkingDays, EmpHours);
 
             }
 
